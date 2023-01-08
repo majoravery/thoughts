@@ -1,15 +1,15 @@
 // support for .env, .env.development, and .env.production
-require("dotenv").config()
+require("dotenv").config();
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://gatsbycontentfulhomepage.gatsbyjs.io/",
-    title: "Gatsby Contentful Homepage Starter",
-    author: `Gatsby`,
-    description: "A Gatsby Starter for building homepages with Contentful",
+    siteUrl: "https://averysthoughts.gatsbyjs.io/",
+    title: "Avery's Thoughts",
+    author: "Avery",
+    description: "Virtual space for thoughts that ought to be ironed out",
   },
   plugins: [
     {
@@ -28,14 +28,15 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "Gatsby Starter Contentful Homepage",
-        short_name: "Gatsby",
+        name: "Avery's Thoughts",
+        short_name: "Thoughts",
         start_url: "/",
         // These can be imported once ESM support lands
-        background_color: "#ffe491",
-        theme_color: "#004ca3",
-        icon: "src/favicon.png",
+        background_color: "#fffff",
+        theme_color: "#ffffff",
+        icon: "src/favicon.ico",
       },
     },
+    "gatsby-theme-contentful-blog",
   ],
-}
+};

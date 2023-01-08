@@ -1,6 +1,12 @@
-import * as React from "react"
+import React from "react";
 
-export default function Head({ title, description, image }) {
+interface SEOHeadProps {
+  title: string;
+  description?: string;
+  image?: { url: string };
+}
+
+const SEOHead: React.FC<SEOHeadProps> = ({ title, description, image }) => {
   return (
     <>
       <meta charSet="utf-8" />
@@ -19,5 +25,7 @@ export default function Head({ title, description, image }) {
       {description && <meta name="twitter:description" content={description} />}
       {image && <meta name="twitter:image" content={image.url} />}
     </>
-  )
-}
+  );
+};
+
+export default SEOHead;
